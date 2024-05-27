@@ -15,11 +15,12 @@
         </h1>
         <button 
             hx-get="/users" 
-            hx-swap="outerHTML"
+            hx-target="#users"
             class="bg-blue-500 text-white py-2 px-3 my-5 rounded-lg"
         >
             Fetch users
         </button>
+        <div id="users"></div>
     </div> 
 </body>
 </html>
