@@ -24,6 +24,17 @@ app.get('/users', async (req, res) => {
     }, 2000);
 })
 
+app.post('/convert', (req, res) => {
+    const { fah } = req.body
+    const celsius = (fah - 32) * (5 / 9)
+
+    setTimeout(() => {
+        res.send(`
+            <p>${celsius.toFixed(2)}<sup>o</sup> celcius</p>
+        `)
+    }, 2000);
+})
+
 app.listen(3000, () => {
     console.log('server listeting to port 3000')
 })

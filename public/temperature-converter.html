@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/htmx.org@1.9.12" integrity="sha384-ujb1lZYygJmzgSwoxRggbCHcjc0rB2XoQrxeTUQyRjrOnlCoYta87iKBWq3EsdM2" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>html</title>
+</head>
+    <body>
+        <div class="container mx-auto mt-8 text-center">
+            <div class="bg-white p-4 border rounded-lg max-w-lg m-auto">
+                <form hx-trigger="submit" hx-post="/convert" hx-indicator="#indicator" hx-target="#target" >
+                    <label for="fah">Fahrenheit</label>
+                    <input type="number" name="fah" value="32" class="border p-2 rounded" required >
+                    <button type="submit" class="bg-blue-500 text-white py-2 px-3 my-5 rounded-lg">
+                        Convert
+                    </button>
+                </form>
+                <div class="htmx-indicator" id="indicator">
+                    <img class="m-auto h-10" src="img/loading.gif" />
+                </div>
+                <div id="target"></div>
+            </div>
+        </div>
+    </body>
+</html>
