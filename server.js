@@ -8,14 +8,10 @@ app.use(express.urlencoded({extended: true}))
 
 app.use(express.json())
 
-app.get('/users', (req, res) => {
-    const users = [
-        {id: 1, name: 'Hei'},
-        {id: 2, name: 'Don'},
-        {id: 3, name: 'Dave'},
-        {id: 4, name: 'Darren'},
-        {id: 5, name: 'Dody'},
-    ]
+app.get('/users', async (req, res) => {
+
+    const response = await fetch('https://jsonplaceholder.typicode.com/users')
+    const users = await response.json()
 
     res.send(`
     <h1 class="text-2xl font-bold my-4"> Users </h1>
