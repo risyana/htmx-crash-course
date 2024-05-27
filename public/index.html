@@ -16,11 +16,14 @@
         <button 
             hx-get="/users" 
             hx-target="#users"
-            hx-confirm="Are you sure to fetch user"
+            hx-indicator="#indicator"
             class="bg-blue-500 text-white py-2 px-3 my-5 rounded-lg"
         >
             Fetch users
         </button>
+        <div class="htmx-indicator" id="indicator">
+            <img class="m-auto h-10" src="img/loading.gif" />
+        </div>
         <div id="users"></div>
     </div> 
 </body>
