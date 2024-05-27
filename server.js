@@ -35,6 +35,17 @@ app.post('/convert', (req, res) => {
     }, 2000);
 })
 
+
+const initialWeather = 20;
+app.get('/weather', (req, res) => {
+    const weather = initialWeather + Math.random() * 2 - 1;
+
+    res.send(`
+        <p>${weather.toFixed(2)}<sup>o</sup> celcius</p>
+    `)
+
+})
+
 app.listen(3000, () => {
     console.log('server listeting to port 3000')
 })

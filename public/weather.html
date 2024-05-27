@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/htmx.org@1.9.12" integrity="sha384-ujb1lZYygJmzgSwoxRggbCHcjc0rB2XoQrxeTUQyRjrOnlCoYta87iKBWq3EsdM2" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>html</title>
+</head>
+    <body>
+        <div class="container mx-auto mt-8 text-center">
+            <div class="bg-white p-4 border rounded-lg max-w-lg m-auto">
+                <h1>Temperature in Bandung</h1>
+                <span hx-get="/weather" hx-trigger="every 5s">
+                    <img class="m-auto h-10" src="img/loading.gif" />
+                </span>
+            </div>
+        </div>
+    </body>
+</html>
