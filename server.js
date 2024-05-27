@@ -9,9 +9,10 @@ app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 
 app.get('/users', async (req, res) => {
+    const { limit } = req.query
 
     setTimeout(async () => {
-        const response = await fetch('https://jsonplaceholder.typicode.com/users')
+        const response = await fetch(`https://jsonplaceholder.typicode.com/users?_limit=${+limit}`)
         const users = await response.json()
 
         res.send(`
